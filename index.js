@@ -1,27 +1,24 @@
 const express = require('express');
+const dotenv = require('dotenv');
 
-const { factory } = require('./steps');
+const { getSolution } = require('./services/binaryTree');
+
+const mongo = require('./mongo/index');
+
+dotenv.config();
+
+const { API_PORT } = process.env;
 
 const app = express();
 
 app.use(express.json());
 
+mongo.connectMongo();
+
 app.post('/binary-tree', (req, res) => {
   const { binaryTree } = req.body;
-  const initialRow = binaryTree.length - 2;
-  const steps = [];
-  for (let row = initialRow; row >= 0; row--) {
-    for (index = 0; index < row + 1; index++) {
-      const node = binaryTree[row][index];
-      const leftChild = binaryTree[row + 1][index];
-      const rightChild = binaryTree[row + 1][index + 1];
-      const sum = leftChild >= rightChild ? leftChild : rightChild;
-      steps.push(factory(row, index, leftChild, rightChild, node, sum));
-      binaryTree[row][index] += sum;
-    }
-    delete binaryTree[row + 1];
-  }
-  res.status(200).send({ steps });
+  const solution = getSolution(binaryTree);
+  res.status(200).send({ solution });
 });
 
-app.listen(5555, console.log('Up on 5555'));
+app.listen(API_PORT, console.log(`Up on ${API_PORT}`));
