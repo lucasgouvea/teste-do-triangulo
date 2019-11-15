@@ -72,4 +72,12 @@ Finalmente o resultado como esperado é 26.
 
 * **Deploy na Google Cloud Platform (docker, provisionamento do BD, integração)** 1.5 horas
 
-###Total: 8 horas de desenvolvimento
+### Total: 8 horas de desenvolvimento
+
+## Desenvolvimento
+
+(1)
+API usando express.
+Rota e teste para POST de uma BinaryTree; resposta mockada dos Steps necessários para resolvê-la.
+Eslint para padronização do código.
+
