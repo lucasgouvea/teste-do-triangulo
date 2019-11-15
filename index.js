@@ -1,9 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
 
-const { getSolution } = require('./services/binaryTree');
+const btService = require('./services/binaryTree');
 
 const mongo = require('./mongo/index');
+const Solution = require('./mongo/repository/solution');
 
 dotenv.config();
 
@@ -15,9 +16,11 @@ app.use(express.json());
 
 mongo.connectMongo();
 
-app.post('/binary-tree', (req, res) => {
+app.post('/binary-tree', async (req, res) => {
   const { binaryTree } = req.body;
-  const solution = getSolution(binaryTree);
+  await btService.create(binaryTree);
+  const solution = btService.getSolution(binaryTree);
+  await Solution.create(solution);
   res.status(200).send({ solution });
 });
 

@@ -1,8 +1,9 @@
 const { expect } = require('chai');
 const request = require('request');
-const solutionSteps = require('../solution');
+const solutionSteps = require('../steps');
 
-const API_HOST = 'http://localhost:5555';
+const { API_HOST } = require('../config');
+
 
 const json = { binaryTree: [[6], [3, 5], [9, 7, 1], [4, 6, 8, 4]] };
 

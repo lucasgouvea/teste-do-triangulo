@@ -13,5 +13,5 @@ db.createUser({
   ],
 });
 
-db.createCollection('binaryTree');
-db.createCollection('solution');
+db.createCollection('binarytrees');
+db.createCollection('solutions');

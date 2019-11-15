@@ -85,3 +85,13 @@ Eslint para padronização do código.
 Implementação da solução do problema e factory de steps.
 Teste para validar solução.
 
+(3)
+Criação da camada de serviços com binaryTree e steps.
+Setup do Mongo.
+Setup de variáveis de ambiente.
+
+(4)
+Criação do repositório (integração com mongo).
+Testes automatizados de unidade.
+Pequenos refactos.
+API pronta.

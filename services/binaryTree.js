@@ -1,4 +1,12 @@
-const { factory } = require('./steps');
+const BinaryTree = require('../mongo/repository/binaryTree');
+
+const { stepFactory } = require('./solution');
+
+exports.create = async (binaryTree) => BinaryTree.create(binaryTree);
+
+exports.findAll = async () => BinaryTree.findAll();
+
+exports.findById = async (id) => BinaryTree.findById(id);
 
 exports.getSolution = (binaryTree) => {
   const initialRow = binaryTree.length - 2;
@@ -10,7 +18,7 @@ exports.getSolution = (binaryTree) => {
       const leftChild = binaryTree[row + 1][index];
       const rightChild = binaryTree[row + 1][index + 1];
       const sum = leftChild >= rightChild ? leftChild : rightChild;
-      steps.push(factory(row, index, leftChild, rightChild, node, sum));
+      steps.push(stepFactory(row, index, leftChild, rightChild, node, sum));
       binaryTree[row][index] += sum;
     }
     delete binaryTree[row + 1];

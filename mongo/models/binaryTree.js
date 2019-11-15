@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const binaryTree = {
-  data: [[]],
+  data: [],
 };
 
 const schema = new mongoose.Schema(binaryTree);
