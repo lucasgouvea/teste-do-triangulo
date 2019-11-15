@@ -81,3 +81,7 @@ API usando express.
 Rota e teste para POST de uma BinaryTree; resposta mockada dos Steps necessários para resolvê-la.
 Eslint para padronização do código.
 
+(2)
+Implementação da solução do problema e factory de steps.
+Teste para validar solução.
+
