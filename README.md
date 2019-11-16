@@ -100,3 +100,9 @@ API/Backend pronto.
 Início do front.
 Componentes Node e Tree, com dados mockados.
 Renderização dinâmica de binaryTree.
+
+(6)
+Lógica da aplicação.
+Helpers.
+Integração dos componentes.
+Refactors.
