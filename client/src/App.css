@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-body {
+  background-color: #282c34;
+  height: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.App-panel{
+  width: 1200px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-tree{
+  width: 1100px;
+  height: 800px;
+  background-color: burlywood;
+}
+
+
+.App-node{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #282c34;
+  text-align: center;
+  line-height: 46px;
+  
+}
+
+.App-child-left{
+  margin-top: -30px;
+  
+}
+
+.App-child-right{
+  margin-left: 15px;
+}
+
+.App-child-left:after{
+  content:"";
+  position:absolute;
+  border-top:4px solid #282c34;
+  width:60px;
+  transform: rotate(135deg);
+  transform-origin: -0% 0%;
+}
+
+.App-child-right:after{
+  content:"";
+  position:absolute;
+  border-top:4px solid #282c34;
+  width:60px;
+  transform: rotate(45deg);
+  transform-origin: -0% 0%;
+}

@@ -94,4 +94,9 @@ Setup de variáveis de ambiente.
 Criação do repositório (integração com mongo).
 Testes automatizados de unidade.
 Pequenos refactos.
-API pronta.
+API/Backend pronto.
+
+(5)
+Início do front.
+Componentes Node e Tree, com dados mockados.
+Renderização dinâmica de binaryTree.
