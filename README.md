@@ -1,6 +1,6 @@
 # Teste do Triângulo
 
-###Solução
+### Solução
 
 
 O problema proposto pode ser resolvido performaticamente utilizando o seguinte método:
