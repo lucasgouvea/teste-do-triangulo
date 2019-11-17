@@ -19,7 +19,6 @@ const updateBinaryTree = (step, steps, binaryTree, setBt) => {
   setBt(bt);
 };
 
-
 const nextStep = (step, steps, binaryTree, setStep, setBt) => {
   if (step < steps.length - 1) {
     setStep(step + 1);
@@ -56,4 +55,4 @@ const random = async (setBt, setStep, setSteps) => {
 };
 
 
-module.exports = { nextStep, postTree, random };
+export { postTree, random, nextStep };

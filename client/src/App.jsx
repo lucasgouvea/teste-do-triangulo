@@ -3,7 +3,6 @@ import './App.css';
 import Tree from './components/Tree';
 import Menu from './components/Menu';
 
-import { nextStep, postTree } from './helpers/app';
 import templateBT from './template/binaryTree';
 import templateSteps from './template/steps';
 

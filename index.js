@@ -13,12 +13,12 @@ const { API_PORT } = process.env;
 const app = express();
 
 app.use(express.json());
+app.use(express.static('client/build'));
 
 mongo.connectMongo();
 
 app.post('/binary-tree', async (req, res) => {
   const { binaryTree } = req.body;
-  console.log(typeof binaryTree);
   await btService.create(binaryTree);
   const solution = btService.getSolution(binaryTree);
   await Solution.create(solution);

@@ -59,7 +59,7 @@ Finalmente o resultado como esperado é 26.
 
 * **API** 0.5 horas
 * **Estruturação e persistência de dados** 1.5 horas
-* **Teste automatizados** 0.5 horas
+* **Testes automatizados** 0.5 horas
 
 ### Frontend (ReactJS)
 
@@ -93,12 +93,12 @@ Setup de variáveis de ambiente.
 (4)
 Criação do repositório (integração com mongo).
 Testes automatizados de unidade.
-Pequenos refactos.
+Pequenos refactors.
 API/Backend pronto.
 
 (5)
 Início do front.
-Componentes Node e Tree, com dados mockados.
+Componentes Node e Tree com dados mockados.
 Renderização dinâmica de binaryTree.
 
 (6)
@@ -111,3 +111,11 @@ Refactors.
 Integração com backend.
 Re-estilização.
 Função Random!
+
+(8)
+Deploy.
+.env comitado para facilitar.
+
+## Link de produção
+
+[http://35.203.39.237:5555/](http://35.203.39.237:5555/)

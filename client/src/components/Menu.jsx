@@ -18,7 +18,8 @@ const Menu = ({ step, steps, binaryTree, input, setStep, setSteps, setBt, setInp
         <input className="App-input" value={input} onChange={(e) => setInput(e.target.value)} />
         <button onClick={() => postTree(input, setBt, setStep, setSteps)}>POST tree</button>
       </div>
-    </div>);
+    </div>
+  );
 }
 
 export default Menu;

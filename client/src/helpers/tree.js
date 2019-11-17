@@ -53,4 +53,4 @@ const nodesFactory = (binaryTree, step) => {
   return nodes;
 };
 
-module.exports = { nodesFactory };
+export { nodesFactory };
