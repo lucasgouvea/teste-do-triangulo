@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 import './App.css';
 import Tree from './components/Tree';
+import Menu from './components/Menu';
 
-import { binaryTree1, nextStep, steps1, changeTree } from './helpers/app';
+import { nextStep, postTree } from './helpers/app';
+import templateBT from './template/binaryTree';
+import templateSteps from './template/steps';
 
 function App() {
-  const [binaryTree, setBt] = useState(binaryTree1);
+  const [binaryTree, setBt] = useState(templateBT);
   const [input, setInput] = useState(JSON.stringify(binaryTree));
-  const [steps, setSteps] = useState(steps1);
+  const [steps, setSteps] = useState(templateSteps);
   const [step, setStep] = useState(0);
   return (
     <div className="App App-body">
-      <div className="App-menu">
-        <div className="App-menu-row">
-          <button onClick={() => { setStep(0); setSteps(steps1); setBt(binaryTree1); }} >Reset</button>
-          <button onClick={() => nextStep(step, steps, binaryTree, setStep, setBt)}>Next step</button>
-        </div>
-        <div className="App-menu-row">
-          <input className="App-input" value={input} onChange={(e) => setInput(e.target.value)} />
-          <button onClick={() => changeTree(input, setBt, setSteps)}>Change tree</button>
-        </div>
-      </div>
-      <div className="App-panel">
-        <Tree binaryTree={binaryTree} step={steps[step]} />
-      </div>
-      <small style={{ marginTop: 10 }}>Use resolução de 100% para esta aplicação! :)</small>
+      <Menu
+        binaryTree={binaryTree}
+        input={input}
+        step={step}
+        steps={steps}
+        setStep={setStep}
+        setSteps={setSteps}
+        setBt={setBt}
+        setInput={setInput}
+      />
+      <Tree binaryTree={binaryTree} step={steps[step]} />
+      <p style={{ color: 'white' }}>developed by lucas gouvea</p>
     </div>
   );
 }

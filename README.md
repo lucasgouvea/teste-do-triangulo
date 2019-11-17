@@ -106,3 +106,8 @@ Lógica da aplicação.
 Helpers.
 Integração dos componentes.
 Refactors.
+
+(7)
+Integração com backend.
+Re-estilização.
+Função Random!

@@ -18,6 +18,7 @@ mongo.connectMongo();
 
 app.post('/binary-tree', async (req, res) => {
   const { binaryTree } = req.body;
+  console.log(typeof binaryTree);
   await btService.create(binaryTree);
   const solution = btService.getSolution(binaryTree);
   await Solution.create(solution);
