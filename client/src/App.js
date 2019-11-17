@@ -9,7 +9,6 @@ function App() {
   const [input, setInput] = useState(JSON.stringify(binaryTree));
   const [steps, setSteps] = useState(steps1);
   const [step, setStep] = useState(0);
-  console.log(binaryTree1);
   return (
     <div className="App App-body">
       <div className="App-menu">

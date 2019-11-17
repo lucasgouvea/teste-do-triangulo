@@ -50,33 +50,33 @@ const steps1 = [
 ];
 
 const binaryTree1 = [[6], [3, 5], [9, 7, 1], [4, 6, 8, 4]];
-const binaryTree2 = [[6], [3, 5], [9, 7, 1], [4, 6, 8, 4], [9, 9, 9, 9, 9]];
-const binaryTree3 = [[6], [3, 5], [9, 7, 1], [4, 6, 8, 4], [9, 9, 9, 9, 9], [9, 9, 9, 9, 9, 9]];
+
+const updateNodesValue = (binaryTree, nodeRow, nodeIndex, sum) => binaryTree.map((arr, row) => {
+  if (nodeRow === row) return arr.map((node, index) => (index === nodeIndex ? sum : node));
+  return arr;
+});
+
+const deleteRow = (binaryTree, step, steps) => {
+  if (steps[step + 1].row === steps[step].row - 1) {
+    binaryTree = binaryTree.filter((arr) => arr.length < binaryTree.length);
+  }
+  return binaryTree;
+};
 
 const updateBinaryTree = (step, steps, binaryTree, setBt) => {
   const { sum } = steps[step];
   const nodeRow = steps[step].row;
   const nodeIndex = steps[step].node.index;
-  const bt = binaryTree.map((arr, row) => {
-    if (nodeRow === row) {
-      return arr.map((node, index) => (index === nodeIndex ? sum : node));
-    }
-    return arr;
-  });
+  let bt = updateNodesValue(binaryTree, nodeRow, nodeIndex, sum);
+  bt = deleteRow(bt, step, steps);
   setBt(bt);
 };
 
 
 const nextStep = (step, steps, binaryTree, setStep, setBt) => {
-  updateBinaryTree(step, steps, binaryTree, setBt);
   if (step < steps.length - 1) {
-    const next = step + 1;
-    if (steps[next].row === steps[next - 1].row - 1) {
-      // Delete row
-      const bt = binaryTree.filter((arr) => arr.length < binaryTree.length);
-      setBt(bt);
-    }
     setStep(step + 1);
+    updateBinaryTree(step, steps, binaryTree, setBt);
   } else {
     alert('no more steps');
   }
